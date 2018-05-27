@@ -1,0 +1,42 @@
+<div class="container spacer">
+  <div class="panel panel-primary">
+    <div class="panel-heading">Liste des utilisateurs</div>
+    <div class="panel-body">
+      <div class="form-group">
+        <label> mot clé</label>
+        <input type="text" [(ngModel)]="motCle"/>
+        <button class="btn btn-primary" (click)="chercher()">chercher</button>
+
+      </div>
+        <table class="table table-striped">
+          <tr>
+            <th>id</th><th>Nom</th><th>Prénom</th><th>civilité</th><th>Téléphone</th><th>Email</th><th>date de naissance</th><th>date d'inscription</th><th>Action<th> 
+          </tr>
+          <tr *ngFor="let utilisateur of pageUtilisateur?.content">
+            <td >{{utilisateur.idUtilisateur}}</td>
+            <td>{{utilisateur.nom }}</td>
+            <td>{{utilisateur.prenom}}</td>
+            <td>{{utilisateur.civilite}}</td>
+            <td>{{utilisateur.telephone}}</td>
+            <td>{{utilisateur.emailUtilisateur}}</td>
+            <td>{{utilisateur.dateNaissance}}</td>
+            <td>{{utilisateur.dateInscription}}</td>
+            <td>
+            <a (click)="onEditUtilisateur(utilisateur.idUtilisateur)" class="clickable">edit</a>
+            <a (click)="onDeleteUtilisateur(utilisateur)" class="clickable">delete</a>
+            </td>
+          </tr>
+        </table>
+      <div class="container">
+        <ul class="nav nav-pills">
+          <li [ngClass]="{active: i== currentPage}" class="clickable" *ngFor="let p of pages ; let i = index">
+
+            <a (click)="gotoPage(i)">{{i+1}}</a>
+
+          </li>
+        </ul>
+ 
+      </div>
+    </div>
+  </div>
+</div>

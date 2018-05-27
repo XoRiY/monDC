@@ -1,0 +1,89 @@
+<div class="container ">
+	<div class="panel panel-info" *ngIf="mode==1">
+		<div class="panel panel-heading">Ajouter un nouvel utilisateur</div>
+		<div class="panel-body"></div>
+		<div>
+			<div class="form-group">
+				<label class="control-label">Nom : </label> <input
+					class="form-control" type="text" [(ngModel)]="utilisateur.nom" [size]=2>
+			</div>
+			<div class="form-group">
+				<label class="control-label">Prenom : </label> <input
+					class="form-control" type="text" [(ngModel)]="utilisateur.prenom">
+			</div>
+			<div class="form-group">
+				<label class="control-label">Email : </label> <input
+					class="form-control" type="email" [(ngModel)]="utilisateur.emailUtilisateur">
+			</div>
+			<div class="form-group">
+				<label class="control-label">Mot de passe : </label> <input
+					class="form-control" type="password" [(ngModel)]="utilisateur.motDePasseUtilisateur">
+			</div>
+			<div class="form-group">
+				<label class="control-label">Telephone : </label> <input
+					class="form-control" type="text"
+					[(ngModel)]="utilisateur.telephone">
+			</div>
+			<div class="form-group">
+				<label class="control-label">Date naissance : </label> <input
+					class="form-control" type="date"
+					[(ngModel)]="utilisateur.dateNaissance">
+
+			</div>
+			<div class="custom-control custom-radio">
+				<input type="radio" id="customRadio1" name="customRadio"
+					class="custom-control-input"  [(ngModel)]="utilisateur.civilite" value="M"> <label
+					class="custom-control-label" for="customRadio1" >Monsieur</label>
+			</div>
+			<div class="custom-control custom-radio">
+				<input type="radio" id="customRadio2" name="customRadio"
+					class="custom-control-input"  [(ngModel)]="utilisateur.civilite" value="MME"> <label
+					class="custom-control-label" for="customRadio2" >Madame</label>
+			</div>
+						<div class="custom-control custom-radio">
+				<input type="radio" id="customRadio3" name="customRadio"
+					class="custom-control-input"  [(ngModel)]="utilisateur.civilite" value="MLLE"/> <label
+					class="custom-control-label" for="customRadio3" >Mademoiselle</label>
+			</div>
+			<button class="btn btn-group-justified btn-info"
+				(click)="saveUtilisateur()">save</button>
+
+		</div>
+		<div *ngIf="mode==2"></div>
+	</div>
+	<div class="panel panel-info" *ngIf="mode==2">
+		<div class="panel panel-heading">Confirmation</div>
+		<div class="panel-body"></div>
+		<div>
+			<div class="form-group">
+				<label class="control-label">id : </label> <label>{{utilisateur.idUtilisateur}}</label>
+			</div>
+			<div class="form-group">
+				<label class="control-label">Nom : </label> <label>{{utilisateur.nom}}</label>
+			</div>
+			<div class="form-group">
+				<label class="control-label">Prenom : </label> <label>{{utilisateur.prenom}}</label>
+			</div>
+			<div class="form-group">
+				<label class="control-label">Email : </label> <label>{{utilisateur.emailUtilisateur}}</label>
+			</div>
+			<div class="form-group">
+				<label class="control-label">Telephone : </label> <label>{{utilisateur.telephone}}</label>
+			</div>
+			<div class="form-group">
+				<label class="control-label">Date naissance : </label> <label>{{utilisateur.dateNaissance}}</label>
+			</div>
+						<div class="form-group">
+				<label class="control-label">Civilité : </label> <label>{{utilisateur.civilite}}</label>
+			</div>
+			<div class="form-group">
+				<label class="control-label">Date Inscription : </label> <label>{{utilisateur.dateInscription}}</label>
+			</div>
+			<button class="btn btn-group-justified btn-info" (click)="mode=1">nouveau save</button>
+
+		</div>
+		<div *ngIf="mode==2"></div>
+	</div>
+
+
+</div>

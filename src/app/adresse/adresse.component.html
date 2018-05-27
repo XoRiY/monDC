@@ -1,0 +1,101 @@
+<div class="container ">
+  <div class="panel panel-info" *ngIf="mode==1">
+    <div class="panel panel-heading">Ajouter un nouvelle adresse</div>
+    <div class="panel-body"></div>
+    <div>
+      <div class="form-group">
+        <label class="control-label">Numero : </label>
+        <input class="form-control" type="number" [(ngModel)]="adresse.numeroVoie" [size]=3>
+      </div>
+      <div class="form-group">
+        <label class="control-label">Type de la voie : </label>
+        <input class="form-control" type="text" [(ngModel)]="adresse.typeVoie">
+      </div>
+      <div class="form-group">
+        <label class="control-label">Nom de la voie : </label>
+        <input class="form-control" type="text" [(ngModel)]="adresse.nomVoie">
+      </div>
+      <div class="form-group">
+        <label class="control-label"> Complément d'adresse : </label>
+        <input class="form-control" type="text" [(ngModel)]="adresse.complementAdresse">
+      </div>
+      <div class="form-group">
+        <label class="control-label">Complément d'adresse 2 : </label>
+        <input class="form-control" type="text" [(ngModel)]="adresse.complementAdresse2">
+      </div>
+      <div class="form-group">
+        <label class="control-label">Complément d'adresse 3 : </label>
+        <input class="form-control" type="text" [(ngModel)]="adresse.complementAdresse3">
+
+      </div>
+      <div class="form-group">
+        <label class="control-label">Code Postal : </label>
+        <input class="form-control" type="number" [(ngModel)]="adresse.codePostal">
+      </div>
+      <div class="form-group">
+        <label class="control-label">Ville : </label>
+        <input class="form-control" type="text" [(ngModel)]="adresse.ville">
+      </div>
+      <div class="form-group">
+        <label class="control-label">Pays : </label>
+        <input class="form-control" type="text" [(ngModel)]="adresse.pays">
+      </div>
+      <button class="btn btn-group-justified btn-info" (click)="saveContact()">save</button>
+
+    </div>
+    <div *ngIf="mode==2"></div>
+  </div>
+  <div class="panel panel-info" *ngIf="mode==2">
+    <div class="panel panel-heading">Confirmation</div>
+    <div class="panel-body"></div>
+    <div>
+      <div class="form-group">
+        <label class="control-label">id : </label>
+        <label>{{adresse.idAdresse}}</label>
+      </div>
+      <div class="form-group">
+        <label class="control-label">numero : </label>
+        <label>{{adresse.numeroVoie}}</label>
+      </div>
+      <div class="form-group">
+        <label class="control-label">type : </label>
+        <label>{{adresse.typeVoie}}</label>
+      </div>
+      <div class="form-group">
+        <label class="control-label">nom de la voie : </label>
+        <label>{{adresse.nomVoie}}</label>
+      </div>
+      <div class="form-group">
+        <label class="control-label">complément 1 : </label>
+        <label>{{adresse.complementAdresse}}</label>
+      </div>
+      <div class="form-group">
+        <label class="control-label">complément 2 : </label>
+        <label>{{adresse.complementAdresse2}}</label>
+      </div>
+      <div class="form-group">
+        <label class="control-label">complément 3 : </label>
+        <label>{{adresse.complementAdresse3}}</label>
+      </div>
+      <div class="form-group">
+        <label class="control-label">code postal : </label>
+        <label>{{adresse.codePostal}}</label>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label">ville : </label>
+        <label>{{adresse.ville}}</label>
+      </div>
+      <div class="form-group">
+        <label class="control-label">pays : </label>
+        <label>{{adresse.pays}}</label>
+      </div>
+      <button class="btn btn-group-justified btn-info" (click)="mode=1">nouveau save
+      </button>
+
+    </div>
+    <div *ngIf="mode==2"></div>
+  </div>
+
+
+</div>
